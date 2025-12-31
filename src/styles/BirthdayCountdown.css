@@ -1,0 +1,146 @@
+/* =========================
+   WRAPPER (FIXED VISIBILITY)
+========================= */
+.countdown-wrapper {
+  position: relative;           
+  z-index: 10;                  
+  margin: 80px auto;
+  text-align: center;
+  padding: 50px 25px;
+  max-width: 900px;
+
+  background: rgba(255, 182, 193, 0.3);   /* transparent light pink */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 30px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+.countdown-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffb703;
+  text-shadow: 0 0 25px rgba(255, 183, 3, 0.9);
+  margin-bottom: 40px;
+}
+
+/* =========================
+   TIMER BOX
+========================= */
+.timer-box {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 11;
+}
+
+/* =========================
+   TIME CARD
+========================= */
+.time-card {
+  min-width: 120px;
+  padding: 22px;
+  border-radius: 22px;
+
+  /* 🌤️ Light glass background */
+  background: rgba(239, 42, 187, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* ☁️ Soft light shadow */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.time-card:hover {
+  transform: translateY(-10px) scale(1.06);
+  box-shadow: 0 25px 60px rgba(255, 79, 139, 0.5);
+}
+
+.time-card span {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+}
+
+.time-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+  color: #ffd6e8;
+  text-transform: uppercase;
+}
+
+/* =========================
+   PULSE SECONDS
+========================= */
+.pulse {
+  animation: pulseGlow 1s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 64, 129, 1);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
+  }
+}
+
+/* =========================
+   NEW YEAR MESSAGE
+========================= */
+.newyear-msg {
+  position: relative;
+  z-index: 12;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #4caf50;
+  text-shadow: 0 0 35px rgba(76, 175, 80, 1);
+  animation: popIn 1.2s ease;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .countdown-title {
+    font-size: 2.2rem;
+  }
+
+  .time-card span {
+    font-size: 2.4rem;
+  }
+
+  .countdown-wrapper {
+    margin: 50px 15px;
+    padding: 35px 20px;
+  }
+}

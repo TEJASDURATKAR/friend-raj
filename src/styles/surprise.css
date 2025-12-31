@@ -1,0 +1,104 @@
+/* Overlay background */
+.surprise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Popup box */
+.surprise-box {
+  background: white;
+  width: 90%;
+  max-width: 380px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: popIn 0.5s ease;
+}
+
+.surprise-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff2b6e;
+}
+
+.surprise-text {
+  font-size: 16px;
+  margin: 10px 0 20px;
+  color: #444;
+}
+
+/* Reveal Button */
+.reveal-btn {
+  background: #ff2b6e;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reveal-btn:hover {
+  transform: scale(1.07);
+}
+
+/* Revealed Content */
+.reveal-content h2 {
+  color: #e01952;
+  margin-bottom: 10px;
+}
+
+.reveal-content p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.surprise-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(255,0,80,0.3);
+}
+
+
+/* Close Button */
+.close-btn {
+  background: #444;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,180 @@
+/* =========================
+   MAIN SECTION
+========================= */
+.love-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #ffe3ec, #fff);
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   HERO
+========================= */
+.love-hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.love-hero h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #d81b60;
+}
+
+.love-hero p {
+  font-size: 1.3rem;
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: #666;
+}
+
+/* =========================
+   PROFILE STRIP
+========================= */
+.profile-strip {
+  margin-bottom: 90px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.03);
+}
+
+.profile-card img {
+  width: 170px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #ffb6c1;
+}
+
+.profile-info h3 {
+  font-size: 1.9rem;
+  color: #c2185b;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Left & Right visual balance */
+.profile-card.left {
+  animation: slideLeft 1s ease;
+}
+
+.profile-card.right {
+  animation: slideRight 1s ease;
+}
+
+/* =========================
+   STORY FLOW
+========================= */
+.story-flow {
+  max-width: 750px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.story-flow h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #d81b60;
+}
+
+.flow-item {
+  background: linear-gradient(135deg, #ffd1e6, #fff);
+  padding: 20px 28px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.18);
+  animation: fadeUp 0.9s ease;
+}
+
+.flow-item span {
+  font-size: 1.8rem;
+}
+
+.flow-item p {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+/* =========================
+   FINAL NOTE
+========================= */
+.final-note {
+  background: linear-gradient(135deg, #ff5f9e, #ff8dc7);
+  padding: 45px 30px;
+  border-radius: 28px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-style: italic;
+  box-shadow: 0 18px 45px rgba(255, 95, 158, 0.4);
+  animation: glow 2.5s infinite alternate;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 18px 45px rgba(255, 95, 158, 0.35); }
+  to { box-shadow: 0 25px 60px rgba(255, 95, 158, 0.6); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-card img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .love-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .story-flow h2 {
+    font-size: 2rem;
+  }
+}

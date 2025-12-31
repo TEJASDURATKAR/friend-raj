@@ -1,0 +1,88 @@
+.newyear-navbar {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  padding: 0.8rem 1rem;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Brand in center */
+.navbar-brand-center {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff !important;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 1px;
+}
+
+/* Left and Right Links */
+.nav-links-left,
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links-left .nav-link,
+.nav-links-right .nav-link {
+  color: #fff !important;
+  font-size: 1.05rem;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links-left .nav-link::after,
+.nav-links-right .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links-left .nav-link:hover::after,
+.nav-links-right .nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-links-left .nav-link:hover,
+.nav-links-right .nav-link:hover {
+  color: #ffecec !important;
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+@media (max-width: 991px) {
+  .navbar-brand-center {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links-left,
+  .nav-links-right {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links-left .nav-link,
+  .nav-links-right .nav-link {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1.1rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+}
