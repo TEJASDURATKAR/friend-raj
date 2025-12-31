@@ -1,16 +1,8 @@
 import { Container } from "react-bootstrap";
 import "../styles/Gallery.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Gallery() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   const memories = [
     { type: "image", src: "/raj-img14.jpeg", text: "Us 💕" },
@@ -43,10 +35,15 @@ export default function Gallery() {
                   muted
                   loop
                   playsInline
-                  autoPlay={!isMobile}
-                  controls={isMobile}
-                  onMouseEnter={(e) => !isMobile && e.target.play()}
-                  onMouseLeave={(e) => !isMobile && e.target.pause()}
+                  preload="auto"
+                  controls
+                  onClick={(e) => {
+                    if (e.target.paused) {
+                      e.target.play();
+                    } else {
+                      e.target.pause();
+                    }
+                  }}
                 />
               )}
 
